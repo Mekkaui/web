@@ -21,7 +21,7 @@ function auth($pass) {
 function db_connect() {
   $result = mysqli_connect($GLOBALS['dbServ'], $GLOBALS['dbUser'], $GLOBALS['dbPass'], $GLOBALS['dbName']);
 	if (!$result) {
-		throw new Exception("Impossible de se connecter à la base de données.";
+		throw new Exception("Impossible de se connecter à la base de données.");
 	}
 	else {
 		return $result;
@@ -72,3 +72,37 @@ function register($username, $email, $passwd) {
 	mysqli_close($con);
 	return true;
 	}
+
+//Vérifie les infos saisies par un utilisateur  lors de sa connexion dans la database
+function login($username, $passwd) {
+	$con=db_connect();
+	$stmt=mysqli_prepare($con, "SELECT * FROM user WHERE (username, passwd) = (?,?)");
+	mysqli_stmt_bind_param($stmt,'ss', $username, sha1($passwd));
+	mysqli_stmt_execute($stmt);
+	$res=mysqli_stmt_get_result($stmt);
+	if (!$res) {
+		throw new Exception("Vous ne pouvez pas vous connecter avec ces identifiants.");
+	}
+	if (mysql_num_rows($res) > 0) {
+		return true;
+	}
+	else {
+		throw new Exception("Vous ne pouvez pas vous connecter.");
+	}
+}
+
+//Vérifie si l'user possède a valid session
+function check_valid_user() {
+	//Vérifie si quelqu'un est connecté et l'avertit dans le cas contraire
+	if (isset($_SESSION['valid_user'])) {
+		echo "Connecté sous le pseudonyme".$_SESSION['valid_user'].".<br/>";
+	}
+	else {
+		// Non connecté
+		echo "Vous n'êtes pas connecté"; ?>
+		<a href="connect.php"> Essayer de vous reconnecter </a>
+		<?php
+		include("footer.php");
+		exit;
+	}
+}
