@@ -43,84 +43,79 @@
           </ul>
         </li>
         <li role="button" data-toggle="modal" data-target="#myModal" class="btn btn-default" aria-haspopup="true" aria-expanded="false"/> Connexion </li>
-      </ul> 
-        <!-- Modal -->
-      	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      		<div class="modal-dialog">
-      			<div class="modal-content">
-      				<div class="modal-header">
-      					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-      					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      				</div>
-      				<div class="modal-body">
-      					<p>Vous n'avez pas de compte ? <a href="registration.php"> Inscription </a> </p>
-
-      					<div>
-      						<form action="header.php" method="post">
-      							<input type="text" placeholder="Votre pseudo" name="username" />
-      							<input type="passwd" placeholder="Mot de passe (Au moins 6 caractères)" name="passwd" />
-      							<input type="submit" value="Connexion" />
-      						</form>
-      					</div>
-      				</div>
-      			</div><!-- /.modal-content -->
-      		</div><!-- /.modal-dialog -->
-      	</div><!-- /.modal -->
-
-
-
-
-    	</div>
-    </div>
-
-<!--
-
-
-
-          <div id="demoLightbox" class="lightbox hide fade"  tabindex="-1" role="dialog" aria-hidden="true">
-            <div class='lightbox-content'>
-              <img src="image.png">
-              <div class="lightbox-caption"><p>Your caption here</p></div>
+      </ul>
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" id="myModalLabel">Connexion</h4>
             </div>
-          </div>
+            <div class="modal-body">
+              <p>Vous n'avez pas de compte ? <a href="registration.php"> Inscription </a> </p>
 
-
-
-
-          <div>
-            <label class="button" for="modalCheck">Connexion</label>
-            <input type="checkbox" id="modalCheck" />
-            <div class="modalLayer">
-              <div class="popup_block">
-                <label for="modalCheck"><img alt="Fermer" title="Fermer la fenêtre" class="btn_close" src="close_pop.png"/></label>
-
-
-                <p>
-                   Connexion
-                  <p>Vous n'avez pas de compte ? <a href="registration.php"> Inscription </a> </p>
-
-                  <div>
-                    <form action="header.php" method="post">
-                      <input type="text" placeholder="Votre pseudo" name="username" />
-                      <input type="passwd" placeholder="Mot de passe (Au moins 6 caractères)" name="passwd" />
-                      <input type="submit" value="Connexion" />
-                    </form>
+              <div>
+                <form action="header.php" method="post">
+                  <input type="text" placeholder="Votre pseudo" name="username" /><br>
+                  <input type="passwd" placeholder="Mot de passe (Au moins 6 caractères)" name="passwd" /><br>
+                  <div id="remember" class="checkbox">
+                    <label>
+                      <input type="checkbox" value="remember-me"> Remember me
+                    </label>
                   </div>
-
-
-                </p>
-
+                  <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+                </form>
+                <a href="#" class="forgot-password">
+                  Forgot the password?
+                </a>
               </div>
             </div>
-          </div>   -->
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
 
 
-        </a></li>
+
+
+    </div>
+  </div>
+
+  <!--
+  <div id="demoLightbox" class="lightbox hide fade"  tabindex="-1" role="dialog" aria-hidden="true">
+  <div class='lightbox-content'>
+  <img src="image.png">
+  <div class="lightbox-caption"><p>Your caption here</p></div>
+</div>
+</div>
+<div>
+<label class="button" for="modalCheck">Connexion</label>
+<input type="checkbox" id="modalCheck" />
+<div class="modalLayer">
+<div class="popup_block">
+<label for="modalCheck"><img alt="Fermer" title="Fermer la fenêtre" class="btn_close" src="close_pop.png"/></label>
+<p>
+Connexion
+<p>Vous n'avez pas de compte ? <a href="registration.php"> Inscription </a> </p>
+<div>
+<form action="header.php" method="post">
+<input type="text" placeholder="Votre pseudo" name="username" />
+<input type="passwd" placeholder="Mot de passe (Au moins 6 caractères)" name="passwd" />
+<input type="submit" value="Connexion" />
+</form>
+</div>
+</p>
+</div>
+</div>
+</div>   -->
+
+
+</a></li>
 
 
 
 
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+</ul>
+</div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
 </nav>
